@@ -1,0 +1,188 @@
+local players = game:GetService("Players")
+local localplayer = players.LocalPlayer
+local lighting = game:GetService("Lighting")
+
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/Wb81c4Zk", true))()
+local Window = library:CreateWindow('Kitty Chapter1')
+
+Window:Section('Remotes')
+
+local cheat = Window:Button("Anti-Cheat", function()
+game.ReplicatedStorage.Events.AE:Destroy()
+end)
+
+local trap = Window:Button("Auto Put Trap", function()
+game.ReplicatedStorage.Events.PutTrap:FireServer()
+end)
+
+local trapk = Window:Button("Auto Trap Kill", function()
+_G.K = true
+while _G.K do
+wait()
+local Event = game:GetService("ReplicatedStorage").Events.KillTrap
+Event:FireServer()
+end
+end)
+
+local cells = Window:Button("Delete Cells", function()
+game.Workspace.Map.House.Cells:Destroy()
+end)
+
+local doors = Window:Button("Delete Doors", function()
+game.Workspace.Map.House.Interacts:Destroy()
+end)
+
+local traps = Window:Button("Delete Traps", function()
+game.Workspace.Map.Traps:Destroy()
+end)
+
+local botesp = Window:Button("Kitty Bot ESP", function()
+local BOT = game:GetService("Workspace").Map.Players.BOT
+
+local BillboardGui = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+
+--Properties:
+
+BillboardGui.Parent = BOT.HumanoidRootPart
+BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui.Active = true
+BillboardGui.AlwaysOnTop = true
+BillboardGui.LightInfluence = 1.000
+BillboardGui.Size = UDim2.new(0, 50, 0, 50)
+
+Frame.Parent = BillboardGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BackgroundTransparency = 0.200
+Frame.Size = UDim2.new(0, 50, 0, 50)
+end)
+
+local noclip = Window:Button("Noclip [F]", function()
+local noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+    	if noclip then
+        	game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+    	end
+	end)
+
+	local plr = game.Players.LocalPlayer
+	local mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+    	if key == 'f' then
+        	noclip = not noclip
+        	game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+   	end
+	end)
+end)
+
+Window:Section('Tools')
+
+local redp = Window:Button("Red Potion", function()
+local Tools = game.Workspace.Map.House.Tools["Red Potion"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local bluep = Window:Button("Blue Potion", function()
+local Tools = game.Workspace.Map.House.Tools["Blue Potion"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local greenp = Window:Button("Green Potion", function()
+local Tools = game.Workspace.Map.House.Tools["Green Potion"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local key = Window:Button("Key Card", function()
+local Tools = game.Workspace.Map.House.Tools["Key Card"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local gas = Window:Button("Gasoline can", function()
+local Tools = game.Workspace.Map.House.Tools["Gasoline can"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local table = Window:Button("Table", function()
+local Tools = game.Workspace.Map.House.Tools.Table.Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local crow = Window:Button("Crowbar", function()
+local Tools = game.Workspace.Map.House.Tools.Crowbar.Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local pliers = Window:Button("Pliers", function()
+local Tools = game.Workspace.Map.House.Tools.Pliers.Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local pick = Window:Button("PickLock", function()
+local Tools = game.Workspace.Map.House.Tools.PickLock.Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local greenk = Window:Button("Green Key", function()
+local Tools = game.Workspace.Map.House.Tools["Green Key"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local bluek = Window:Button("Blue Key", function()
+local Tools = game.Workspace.Map.House.Tools["Blue Key"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+local redk = Window:Button("Red Key", function()
+local Tools = game.Workspace.Map.House.Tools["Red Key"].Handle.CFrame
+ 
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = Tools
+end)
+
+Window:Section('Teleports')
+
+local silver = Window:Button("Silver Door", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-536, 140, -367)
+end)
+
+local brown = Window:Button("Brown Door", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-435, 178, -408)
+end)
+
+local green = Window:Button("Green Door", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 178, -404)
+end)
+
+local blue = Window:Button("Blue Door", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-435, 140, -315)
+end)
+
+local red = Window:Button("Red Door", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-401, 159, -400)
+end)
+
+local washing = Window:Button("Washing Machine", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560, 159, -429)
+end)
