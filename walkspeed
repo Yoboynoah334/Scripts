@@ -1,0 +1,90 @@
+
+
+-- Objects
+
+local GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Creds = Instance.new("TextLabel")
+local WSValue = Instance.new("TextBox")
+local JPValue = Instance.new("TextBox")
+local JP = Instance.new("TextLabel")
+local WS = Instance.new("TextLabel")
+-- Properties
+
+GUI.Name = "GUI"
+GUI.Parent = game.Players.LocalPlayer.PlayerGui
+
+Main.Name = "Main"
+Main.Parent = GUI
+Main.Active = true
+Main.BackgroundColor3 = Color3.new(1, 1, 1)
+Main.BorderSizePixel = 0
+Main.Draggable = true
+Main.Position = UDim2.new(0, 0, 0.5, -103)
+Main.Size = UDim2.new(0, 392, 0, 217)
+
+Creds.Name = "Creds"
+Creds.Parent = Main
+Creds.BackgroundColor3 = Color3.new(1, 1, 1)
+Creds.BorderSizePixel = 0
+Creds.Position = UDim2.new(0, 0, 0.769585252, 0)
+Creds.Size = UDim2.new(0, 392, 0, 50)
+Creds.Font = Enum.Font.SourceSansLight
+Creds.Text = "Made by: Hoofer\nIdea by: Goldenaxelord"
+Creds.TextScaled = true
+Creds.TextSize = 14
+Creds.TextWrapped = true
+
+WSValue.Name = "WSValue"
+WSValue.Parent = Main
+WSValue.BackgroundColor3 = Color3.new(0.207843, 0.658824, 1)
+WSValue.BorderSizePixel = 0
+WSValue.Position = UDim2.new(0.0382653065, 0, 0.129032254, 0)
+WSValue.Size = UDim2.new(0, 357, 0, 26)
+WSValue.Font = Enum.Font.SourceSansLight
+WSValue.Text = "16"
+WSValue.TextSize = 25
+
+JPValue.Name = "JPValue"
+JPValue.Parent = Main
+JPValue.BackgroundColor3 = Color3.new(0.207843, 0.658824, 1)
+JPValue.BorderSizePixel = 0
+JPValue.Position = UDim2.new(0.0382653065, 0, 0.48617512, 0)
+JPValue.Size = UDim2.new(0, 357, 0, 26)
+JPValue.Font = Enum.Font.SourceSansLight
+JPValue.Text = "50"
+JPValue.TextSize = 25
+
+JP.Name = "JP"
+JP.Parent = Main
+JP.BackgroundColor3 = Color3.new(1, 1, 1)
+JP.BorderSizePixel = 0
+JP.Position = UDim2.new(0, 0, 0.357142866, 0)
+JP.Size = UDim2.new(0, 392, 0, 28)
+JP.Font = Enum.Font.SourceSansLight
+JP.Text = "JumpPower"
+JP.TextScaled = true
+JP.TextSize = 14
+JP.TextWrapped = true
+
+WS.Name = "WS"
+WS.Parent = Main
+WS.BackgroundColor3 = Color3.new(1, 1, 1)
+WS.BorderSizePixel = 0
+WS.Size = UDim2.new(0, 392, 0, 28)
+WS.Font = Enum.Font.SourceSansLight
+WS.Text = "WalkSpeed"
+WS.TextScaled = true
+WS.TextSize = 14
+WS.TextWrapped = true
+
+
+
+while true do
+	wait()
+	local human = game.Players.LocalPlayer.Character.Humanoid
+	human.WalkSpeed = WSValue.Text
+	human.JumpPower = JPValue.Text
+end
+
+local open = true
