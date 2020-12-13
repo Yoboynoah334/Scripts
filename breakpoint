@@ -1,0 +1,166 @@
+-- By Cole
+-- Objects
+
+local BP = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local BreakingPoint = Instance.new("TextLabel")
+local VouchBro = Instance.new("TextLabel")
+local LightsOnPerm = Instance.new("TextButton")
+local ShowNames = Instance.new("TextButton")
+local LightsOn = Instance.new("TextButton")
+local Hide = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local Show = Instance.new("TextButton")
+
+-- Properties
+
+BP.Name = "BP"
+BP.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = BP
+Main.BackgroundColor3 = Color3.new(1, 1, 1)
+Main.Draggable = true
+Main.Position = UDim2.new(0.741935492, 0, 0.707823932, 0)
+Main.Selectable = true
+Main.Size = UDim2.new(0.258064508, 0, 0.271393657, 0)
+Main.Style = Enum.FrameStyle.RobloxRound
+
+BreakingPoint.Name = "Breaking Point"
+BreakingPoint.Parent = Main
+BreakingPoint.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+BreakingPoint.BackgroundTransparency = 1
+BreakingPoint.Size = UDim2.new(1, 0, 0, 25)
+BreakingPoint.Font = Enum.Font.ArialBold
+BreakingPoint.FontSize = Enum.FontSize.Size28
+BreakingPoint.Text = "Breaking Point"
+BreakingPoint.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+BreakingPoint.TextSize = 28
+
+VouchBro.Name = "Vouch Bro"
+VouchBro.Parent = Main
+VouchBro.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+VouchBro.BackgroundTransparency = 1
+VouchBro.Position = UDim2.new(0, 0, 0.184684679, 0)
+VouchBro.Size = UDim2.new(1, 0, 0, 25)
+VouchBro.Font = Enum.Font.ArialBold
+VouchBro.FontSize = Enum.FontSize.Size28
+VouchBro.Text = "Crap Gui v1"
+VouchBro.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+VouchBro.TextSize = 28
+
+LightsOnPerm.Name = "Lights On Perm"
+LightsOnPerm.Parent = Main
+LightsOnPerm.BackgroundColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOnPerm.BorderColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOnPerm.BorderSizePixel = 5
+LightsOnPerm.Position = UDim2.new(0.125086308, 0, 0.612903237, 0)
+LightsOnPerm.Size = UDim2.new(0.750999987, 0, 0.172000006, 0)
+LightsOnPerm.Style = Enum.ButtonStyle.RobloxButton
+LightsOnPerm.Font = Enum.Font.ArialBold
+LightsOnPerm.FontSize = Enum.FontSize.Size18
+LightsOnPerm.Text = "Light On (Stay On)"
+LightsOnPerm.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOnPerm.TextSize = 17
+LightsOnPerm.TextStrokeColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOnPerm.TextWrapped = true
+LightsOnPerm.MouseButton1Down:connect(function()
+		while true do
+		wait(.1)
+		local Light = game.Workspace.light.PointLight
+		Light.Range = 60
+		Light.Brightness = 60
+		Light.Enabled = true
+	end
+end)
+
+ShowNames.Name = "Show Names"
+ShowNames.Parent = Main
+ShowNames.BackgroundColor3 = Color3.new(1, 0.670588, 0.137255)
+ShowNames.BorderColor3 = Color3.new(1, 0.670588, 0.137255)
+ShowNames.BorderSizePixel = 5
+ShowNames.Position = UDim2.new(0.125086308, 0, 0.811827958, 0)
+ShowNames.Size = UDim2.new(0.750999987, 0, 0.172000006, 0)
+ShowNames.Style = Enum.ButtonStyle.RobloxButton
+ShowNames.Font = Enum.Font.ArialBold
+ShowNames.FontSize = Enum.FontSize.Size18
+ShowNames.Text = "Undisguise Players"
+ShowNames.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+ShowNames.TextSize = 17
+ShowNames.TextStrokeColor3 = Color3.new(1, 0.670588, 0.137255)
+ShowNames.TextWrapped = true
+ShowNames.MouseButton1Down:connect(function()
+		for index, child in pairs(game.Players:GetChildren()) do
+   		child.HealthDisplayDistance = 150
+		child.NameDisplayDistance = 150
+	end
+end)
+
+LightsOn.Name = "Lights On"
+LightsOn.Parent = Main
+LightsOn.BackgroundColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOn.BorderColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOn.BorderSizePixel = 5
+LightsOn.Position = UDim2.new(0.125086308, 0, 0.419354826, 0)
+LightsOn.Size = UDim2.new(0.750517905, 0, 0.172043011, 0)
+LightsOn.Style = Enum.ButtonStyle.RobloxButton
+LightsOn.Font = Enum.Font.ArialBold
+LightsOn.FontSize = Enum.FontSize.Size18
+LightsOn.Text = "Light On"
+LightsOn.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOn.TextSize = 17
+LightsOn.TextStrokeColor3 = Color3.new(1, 0.670588, 0.137255)
+LightsOn.TextWrapped = true
+LightsOn.MouseButton1Down:connect(function()
+	local Light = game.Workspace.light.PointLight
+	Light.Range = 60
+	Light.Brightness = 60
+	Light.Enabled = true
+end)
+
+Hide.Name = "Hide"
+Hide.Parent = Main
+Hide.BackgroundColor3 = Color3.new(1, 0.670588, 0.137255)
+Hide.BorderColor3 = Color3.new(1, 0.670588, 0.137255)
+Hide.BorderSizePixel = 5
+Hide.Position = UDim2.new(0, 0, -0.0215053763, 0)
+Hide.Size = UDim2.new(0.125086308, 0, 0.17741935, 0)
+Hide.Style = Enum.ButtonStyle.RobloxButton
+Hide.Font = Enum.Font.ArialBold
+Hide.FontSize = Enum.FontSize.Size18
+Hide.Text = ">"
+Hide.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+Hide.TextSize = 17
+Hide.TextStrokeColor3 = Color3.new(1, 0.670588, 0.137255)
+Hide.TextWrapped = true
+Hide.MouseButton1Down:connect(function()
+	Main.Visible = false
+	Frame.Visible = true
+end)
+
+Frame.Parent = BP
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BackgroundTransparency = 1
+Frame.Position = UDim2.new(0.935483932, 0, 0.713245988, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
+Frame.Visible = false
+
+Show.Name = "Show"
+Show.Parent = Frame
+Show.BackgroundColor3 = Color3.new(1, 0.670588, 0.137255)
+Show.BorderColor3 = Color3.new(1, 0.670588, 0.137255)
+Show.BorderSizePixel = 5
+Show.Position = UDim2.new(0.409032255, 0, -0.00999999978, 0)
+Show.Size = UDim2.new(0.409032255, 0, 0.310000002, 0)
+Show.Style = Enum.ButtonStyle.RobloxButton
+Show.Font = Enum.Font.ArialBold
+Show.FontSize = Enum.FontSize.Size18
+Show.Text = "<"
+Show.TextColor3 = Color3.new(1, 0.670588, 0.137255)
+Show.TextSize = 17
+Show.TextStrokeColor3 = Color3.new(1, 0.670588, 0.137255)
+Show.TextWrapped = true
+Show.MouseButton1Down:connect(function()
+	Main.Visible = true
+	Frame.Visible = false
+end)
